@@ -32,7 +32,7 @@
   <body>
     <div id="modal-div"></div>
 
-    <h1 class="text-center my-4">Dynamic Recipe Finder</h1>
+    <h1 class="text-center my-4">Dynamic Recipe Finder Application</h1>
     <div class="container mt-3">
       <div class="input-group w-50 d-flex m-auto my-4">
         <input
@@ -53,6 +53,14 @@
           ></span>
         </div>
       </div>
+      <button
+        id="sorting-btn"
+        style="display: none"
+        class="btn btn-warning btn-sm"
+        onclick="sortRecipies()"
+      >
+        Sort By Name
+      </button>
     </div>
     <div class="container mt-3" id="recipeContainer">
       <div class="row" id="recipies"></div>
