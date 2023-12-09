@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      .recipe-card {
+        margin: 10px;
+      }
+      @media (min-width: 576px) {
+        .recipe-card {
+          flex: 0 0 calc(25% - 20px);
+          max-width: calc(25% - 20px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="modal-div"></div>
+
+    <h1 class="text-center my-4">Dynamic Recipe Finder</h1>
+    <div class="container mt-3">
+      <div class="input-group w-50 d-flex m-auto my-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search..."
+          aria-label="Search"
+          aria-describedby="search-icon"
+          id="searchInput"
+        />
+        <div
+          class="input-group-append"
+          id="searchButton"
+          onclick="findRecipe()"
+        >
+          <span class="input-group-text" id="search-icon"
+            ><i class="fas fa-search"></i
+          ></span>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3" id="recipeContainer">
+      <div class="row" id="recipies"></div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-modal/2.2.6/js/bootstrap-modalmanager.min.js"
+      integrity="sha512-/HL24m2nmyI2+ccX+dSHphAHqLw60Oj5sK8jf59VWtFWZi9vx7jzoxbZmcBeeTeCUc7z1mTs3LfyXGuBU32t+w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>
