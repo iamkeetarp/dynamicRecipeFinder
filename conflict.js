@@ -1,1 +1,1 @@
-var str = "the number of planets are";
+var str = "the number of planets are 9";
