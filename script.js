@@ -1,16 +1,19 @@
+var data;
 async function findRecipe() {
   let recipe = document.getElementById("searchInput").value;
-  console.log(recipe);
   const url =
     "https://api.edamam.com/search?q=" +
     recipe +
     "&app_id=62175d8b&app_key=2216b2fa6b85b5a7f25b112e694abcd4";
   const response = await fetch(url);
   const recipies = await response.json();
+  data = recipies.hits;
   showRecipeData(recipies.hits);
 }
 
 function showRecipeData(data) {
+  console.log(data[0].recipe.label);
+  document.getElementById("sorting-btn").style.display = "block";
   const cardString = data.map(
     (card) => `
     <div class="card col-md-3" style="width: 18rem">
@@ -86,4 +89,12 @@ function showModal(modalData) {
   </div>
 </div>`;
   document.getElementById("modal-div").innerHTML = modelDiv;
+}
+
+function sortRecipies() {
+  console.log(data);
+  var sortedData = [...data.sort((a, b) => b.recipe.label - a.recipe.label)];
+  document.getElementById("recipies").innerHTML = "";
+  console.log(sortedData[0].recipe.label);
+  showRecipeData(sortedData);
 }
