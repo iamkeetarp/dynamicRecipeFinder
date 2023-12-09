@@ -1,1 +1,1 @@
-let planets = "the number of planet is nice";
+let planets = "the number of planet is eight";
